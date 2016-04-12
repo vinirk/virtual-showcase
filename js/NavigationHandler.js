@@ -138,11 +138,15 @@
             name.innerHTML = item.getName();
             referenceDiv.appendChild(name);
 
-            var oldPrice = document.createElement('span');
-            oldPrice.className = 'item-old-price';
-            oldPrice.innerHTML = item.getOldPrice();
-            referenceDiv.appendChild(oldPrice);
-            referenceDiv.appendChild(document.createElement("br"));
+            if( item.getOldPrice() != null) {
+                var oldPrice = document.createElement('span');
+                oldPrice.className = 'item-old-price';
+                oldPrice.innerHTML = item.getOldPrice();
+                referenceDiv.appendChild(oldPrice);
+                referenceDiv.appendChild(document.createElement("br"));
+            } else {
+                referenceDiv.appendChild(document.createElement("br"));
+            }
 
             var price = document.createElement('span');
             price.className = 'item-price';
