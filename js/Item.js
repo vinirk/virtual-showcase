@@ -48,7 +48,12 @@ Item.prototype.setName = function(name) {
 };
 
 Item.prototype.getOldPrice = function() {
-    return "De: " + this.oldPrice;
+    if( this.oldPrice == null ) {
+        return null;
+    } else {
+        return "De: " + this.oldPrice;
+    }
+
 };
 
 Item.prototype.setOldPrice = function(oldPrice) {
